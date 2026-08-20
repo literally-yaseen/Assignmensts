@@ -25,9 +25,25 @@
 
 // alert(result)
 
-// operators ternary 
+// operators ternary
 
-let status = 20
+// let status = 20;
 
-let result = status >= 100 ? 'Gold' : status >= 60 ? 'Silver' : 'Bronze'
-console.log(result)
+// let result = status >= 100 ? "Gold" : status >= 60 ? "Silver" : "Bronze";
+// console.log(result);
+
+
+// Game state calculator
+
+let baseHealth = 100;
+let damage = 50;
+let mana = 25;
+
+let currentHealth = baseHealth - damage;
+let healthPercentage = (currentHealth/baseHealth) * 100
+
+let healthState = currentHealth <= 0 ? 'Fainted' : currentHealth >= 25 ? 'All Right' : 'Critical';
+let canCastUltimate = mana <= 50 && currentHealth > 50 ? 'Ready' : 'Not Ready'
+
+console.log(`Health Status: ${healthState}`)
+console.log(`Can Cast Mana: ${canCastUltimate}`)
